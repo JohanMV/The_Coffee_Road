@@ -1,0 +1,146 @@
+/* === Specialties Section === */
+.specialties {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.specialties__accent-bg {
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.specialties__header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.specialties__header .section-label {
+    justify-content: center;
+}
+
+.specialties__header .section-label::before {
+    display: none;
+}
+
+.specialties__header .section-description {
+    margin: 0 auto;
+}
+
+/* === Cards Grid === */
+.specialties__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.specialty-card {
+    position: relative;
+    padding: 36px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.specialty-card:hover {
+    border-color: var(--gold-500);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.specialty-card__shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.04), transparent);
+    transition: var(--transition-slow);
+}
+
+.specialty-card:hover .specialty-card__shine {
+    left: 120%;
+}
+
+.specialty-card__icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.15), rgba(201, 169, 110, 0.05));
+    border: 1px solid var(--border-accent);
+    color: var(--gold-500);
+    margin-bottom: 24px;
+}
+
+.specialty-card__header {
+    margin-bottom: 16px;
+}
+
+.specialty-card__title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--cream-100);
+    margin-bottom: 4px;
+}
+
+.specialty-card__origin {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-500);
+}
+
+.specialty-card__description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.specialty-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.specialty-card__roast {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.specialty-card__price {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold-500);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .specialties__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .specialties__grid {
+        grid-template-columns: 1fr;
+    }
+}
